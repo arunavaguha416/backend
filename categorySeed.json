@@ -1,0 +1,182 @@
+[
+    {
+        "model": "categories.category",
+        "pk": "1a2b3c4d-5e6f-7890-a1b2-c3d4e5f67890",
+        "fields": {
+            "title": "Salary",
+            "description": "Income from employment",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "2b3c4d5e-6f78-9012-b3c4-d5e6f7890123",
+        "fields": {
+            "title": "Freelance",
+            "description": "Income from freelance work",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "3c4d5e6f-7890-1234-c5d6-e7f890123456",
+        "fields": {
+            "title": "Groceries",
+            "description": "Expenses for food and household items",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "4d5e6f78-9012-3456-d7e8-f90123456789",
+        "fields": {
+            "title": "Rent",
+            "description": "Monthly rent payment",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "5e6f7890-1234-5678-e9f0-1234567890ab",
+        "fields": {
+            "title": "Utilities",
+            "description": "Electricity, water, internet bills",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "6f789012-3456-7890-f123-4567890abcde",
+        "fields": {
+            "title": "Entertainment",
+            "description": "Movies, concerts, subscriptions",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "78901234-5678-90ab-1234-567890abcdef",
+        "fields": {
+            "title": "Transportation",
+            "description": "Fuel, public transit, car maintenance",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "89012345-6789-0abc-2345-67890abcdef1",
+        "fields": {
+            "title": "Dining Out",
+            "description": "Expenses for eating at restaurants",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "90123456-7890-abcd-3456-7890abcdef12",
+        "fields": {
+            "title": "Savings",
+            "description": "Money set aside for savings",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "01234567-890a-bcde-4567-890abcdef123",
+        "fields": {
+            "title": "Healthcare",
+            "description": "Medical expenses, insurance",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "12345678-90ab-cdef-5678-90abcdef1234",
+        "fields": {
+            "title": "Travel",
+            "description": "Expenses for trips and vacations",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "23456789-0abc-def1-6789-0abcdef12345",
+        "fields": {
+            "title": "Education",
+            "description": "Tuition, books, or course fees",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "34567890-abcd-ef12-7890-abcdef123456",
+        "fields": {
+            "title": "Clothing",
+            "description": "Purchases of clothes and accessories",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "4567890a-bcde-f123-890a-bcdef1234567",
+        "fields": {
+            "title": "Gifts",
+            "description": "Expenses for buying gifts for others",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "model": "categories.category",
+        "pk": "567890ab-cdef-1234-90ab-cdef12345678",
+        "fields": {
+            "title": "Insurance",
+            "description": "Payments for insurance premiums",            
+            "created_at": "2025-05-24T18:34:00Z",
+            "updated_at": "2025-05-24T18:34:00Z",
+            "published_at": null,
+            "deleted_at": null
+        }
+    }
+]

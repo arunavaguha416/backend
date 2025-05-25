@@ -1,0 +1,12 @@
+[
+    {
+        "model": "authentication.user",
+        "pk": "03ad810d-2397-4d81-9d13-a8e86d932e6e",
+        "fields": {            
+            "name": "Sanskrit",
+            "email":"abc2@gmail.com",
+            "password":"abc1234"
+        }
+    }
+    
+]
