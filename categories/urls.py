@@ -10,4 +10,5 @@ urlpatterns = [
     path('publish/', ChangeCategoryPublishStatus.as_view(), name='category-publish'),
     path('delete/<int:category_id>/', CategoryDelete.as_view(), name='category-delete'),
     path('restore/', RestoreCategory.as_view(), name='category-restore'),
+    path('loadCategory/', RestoreCategory.as_view(), name='category-restore'),
 ]
