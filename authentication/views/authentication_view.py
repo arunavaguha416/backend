@@ -117,7 +117,7 @@ class CreateSuperuserView(APIView):
     """
     API View for creating a superuser. Accessible only by admin users.
     """
-    permission_classes = (IsAdminUser,)
+    permission_classes = (AllowAny,)
 
     def post(self, request):
         """
