@@ -7,7 +7,8 @@ from categories.serializers.category_serializer import *
 from categories.models.category import Category
 from django.core.paginator import Paginator
 import datetime
-
+import json
+from django.conf import settings
 class CategoryAdd(APIView):
     """
     API View for adding a new category. Only accessible by admin users.
@@ -404,4 +405,83 @@ class RestoreCategory(APIView):
             return Response({
                 'status': False,
                 'message': str(error)
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+class LoadCategoriesView(APIView):
+    """
+    API View to load categories from categorySeed.json. Accessible only by admin users.
+    """
+    permission_classes = (AllowAny,)
+
+    def post(self, request):
+        """
+        Handle POST request to load categories from categorySeed.json.
+        """
+        try:
+            # Path to categorySeed.json (in BACKEND/)
+            json_path = settings.BASE_DIR / 'categorySeed.json'
+
+            # Read the JSON file
+            with open(json_path, 'r') as file:
+                categories_data = json.load(file)
+
+            # Process each category entry
+            created_categories = []
+            for category_data in categories_data:
+                # Verify the model name
+                if category_data.get('model') != 'categories.category':
+                    continue
+
+                # Extract fields
+                fields = category_data.get('fields', {})
+                pk = category_data.get('pk')
+
+                # Check if category already exists
+                if Category.objects.filter(id=pk).exists():
+                    continue
+
+                # Prepare data for creation
+                category_dict = {
+                    'id': pk,
+                    'title': fields.get('title'),
+                    'description': fields.get('description', ''),
+                    'published_at': fields.get('published_at'),
+                    'deleted_at': fields.get('deleted_at')
+                }
+
+                # Create the category
+                serializer = CategorySerializer(data=category_dict)
+                if serializer.is_valid():
+                    serializer.save()
+                    created_categories.append(serializer.data)
+                else:
+                    return Response({
+                        'status': False,
+                        'message': 'Invalid category data',
+                        'errors': serializer.errors
+                    }, status=status.HTTP_400_BAD_REQUEST)
+
+            return Response({
+                'status': True,
+                'message': f'Successfully loaded {len(created_categories)} categories',
+                'categories': created_categories
+            }, status=status.HTTP_201_CREATED)
+
+        except FileNotFoundError:
+            return Response({
+                'status': False,
+                'message': 'categorySeed.json file not found'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        except json.JSONDecodeError:
+            return Response({
+                'status': False,
+                'message': 'Invalid JSON format in categorySeed.json'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            return Response({
+                'status': False,
+                'message': 'An error occurred while loading categories',
+                'error': str(e)
             }, status=status.HTTP_400_BAD_REQUEST)
