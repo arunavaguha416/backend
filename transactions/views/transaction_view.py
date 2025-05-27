@@ -193,15 +193,9 @@ class TransactionUpdate(APIView):
             }, status=status.HTTP_400_BAD_REQUEST)
 
 class TransactionDelete(APIView):
-    """
-    API View for deleting a transaction. Only accessible by authenticated users.
-    """
     permission_classes = (IsAuthenticated,)
 
     def delete(self, request, transaction_id):
-        """
-        Handle DELETE request to soft delete a transaction.
-        """
         try:
             transaction = Transaction.objects.filter(id=transaction_id, user=request.user).first()
 
