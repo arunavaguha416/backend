@@ -6,14 +6,14 @@ User = get_user_model()
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        username = 'admin'
-        email = 'admin@example.com'
-        password = get_random_string(12)  # Generate a random password
+        
+        email = 'test@example.com'
+        password = 'admin@1234'  # Set fixed password
 
-        if not User.objects.filter(username=username).exists():
-            User.objects.create_superuser(username=username, email=email, password=password)
+        if not User.objects.filter(email=email).exists():
+            User.objects.create_superuser(email=email, password=password)
             self.stdout.write(self.style.SUCCESS(
-                f"Superuser created: username={username}, email={email}, password={password}"
+                f"Superuser created: email={email}, password={password}"
             ))
         else:
             self.stdout.write(self.style.WARNING("Superuser already exists."))
